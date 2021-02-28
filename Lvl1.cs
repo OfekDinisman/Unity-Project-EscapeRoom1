@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
 public class Lvl1 : MonoBehaviour
 {
     public GameObject wood1;
@@ -20,7 +19,11 @@ public class Lvl1 : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { //hide end effect
+    {
+        //write to log file
+        string time = System.DateTime.Now.ToString();
+        HandleTextFile.WriteString("start escape room 1:"+time);
+                //hide end effect
         endLvl1Effect = GameObject.Find("Endlvl1Effect");
         endLvl1Effect.SetActive(false);
         //hide end message
@@ -49,6 +52,9 @@ public class Lvl1 : MonoBehaviour
         {
             IsPass = true;
             Debug.Log("lvl1 pass");
+            //write to log file
+            string time = System.DateTime.Now.ToString();
+            HandleTextFile.WriteString("finish Level1:" + time);
             //show effect
             endLvl1Effect.SetActive(true);
             //show new message

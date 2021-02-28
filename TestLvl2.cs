@@ -40,6 +40,9 @@ public class TestLvl2 : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log("Testlvl2Animation");
         //show finish lvl message
+        //write to log file
+        string time = System.DateTime.Now.ToString();
+        HandleTextFile.WriteString("finish Level2:" + time);
         txtTitle.SetActive(false);
         txtfinish.SetActive(true);
         lamaObj.SetActive(true);//show lama gift

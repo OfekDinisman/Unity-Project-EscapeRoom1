@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class TestLvl3 : MonoBehaviour, IPointerClickHandler
+public class TestLvl2ER2 : MonoBehaviour, IPointerClickHandler
 {
     // Start is called before the first frame update
     #region IPointerClickHandler implementation
@@ -26,33 +26,24 @@ public class TestLvl3 : MonoBehaviour, IPointerClickHandler
 
     public void MyOwnEventTriggered()
     {
-        Testlvl3Animation();
+        Testlvl2ER2Animation();
     }
 
     //animation
     public string animationName;
     Animator anim;
-    private GameObject endLvl3Effect;
-    private GameObject Title3;
-    private GameObject Title3endLvl;
-    public  void Testlvl3Animation()
+
+    public void Testlvl2ER2Animation()
     {
-        Debug.Log("Testlvl3Animation");
-        //move animals
-        //move DuckWhite
-        GameObject pigBox = GameObject.Find("pigBox");
-        pigBox.GetComponent<Animation>().Play("MovePig");
+        Debug.Log("Testlvl2ER2Animation");
+        animationName = "MoveSword";//Move Sword
+        GameObject Sword = GameObject.Find("MoonSword");
+        Sword.GetComponent<Animation>().Play(animationName);
     }
-   
+
     void Start()
     {
-        endLvl3Effect = GameObject.Find("Endlvl3Effect");
-        //show messages
-        Title3endLvl = GameObject.Find("Title3endLvl");
-        Title3 = GameObject.Find("Title3");
+
     }
- 
-
-
 }
 
